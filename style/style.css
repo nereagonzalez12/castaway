@@ -16,8 +16,8 @@
 :root {
     --green-color: #5bf870;
     --green-bg: #05321e;
-    --red-color: #c0100a;
-    --red-bg: #1b0302;
+    --orange-color: #FC9F27;
+    --red-bg: #2E1C0A;
     --blue-color: #a5a5ff;
     --blue-bg: #4242e7;
     --off: #050505;
@@ -25,14 +25,9 @@
     --autotype-steps: 30;
 }
 
-/*********** INPUT FORM *************/
-
-
-
-
 /*********** THEMES  *************/
-.theme-red {
-    --color: var(--red-color);
+.theme-orange {
+    --color: var(--orange-color);
     --bg: var(--red-bg);
 }
 
@@ -159,6 +154,19 @@ input {
     pointer-events: none;
     animation: scanline 10s linear infinite;
 }
+
+/*********** THEME SELECTOR *************/
+.theme-selector {
+    position: absolute;
+    bottom: 25;
+    font-size: 1.5em;
+}
+
+.theme-selector div {
+    cursor: pointer;
+}
+
+
 
 /*********** TITLE *************/
 .title {

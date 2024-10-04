@@ -16,5 +16,10 @@ $nameRequest = 'Introduce tu nombre para empezar:';
                 <input name="name" id="name" type="text" autocomplete="off" maxlength="10">
             </form>
         </div>
+        <div class="theme-selector">
+            <div style="color: var(--green-color);">■</div>
+            <div style="color: var(--orange-color);">■</div>
+            <div style="color: var(--blue-bg);">■</div>
+        </div>
     </div>
 </body>
