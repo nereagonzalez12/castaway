@@ -1,3 +1,7 @@
+/*
+ * Credits for the terminal effects:
+ * Scanlines/flicker: 	http://aleclownes.com/2017/02/01/crt-display.html
+ */
 @import url("https://fonts.googleapis.com/css?family=VT323&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
@@ -46,8 +50,6 @@ body {
     background: var(--bg);
     margin: 0;
     overflow: hidden;
-    font-family: "VT323", monospace;
-    font-size: max(3rem, 1.6vmin);
 }
 
 a {
@@ -56,7 +58,22 @@ a {
 
 /*********** PARTS OF THE SCREEN *************/
 
+.terminal::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
 .terminal {
+    font-family: "VT323", monospace;
     position: relative;
     height: 100%;
     padding: 2rem;
@@ -65,11 +82,35 @@ a {
     word-break: break-word;
     text-transform: uppercase;
     animation: textShadow 4s infinite;
-}
-
-.terminal {
     color: var(--color);
     text-shadow: 0 0 5px #c8c8c8;
+    /* This makes 80 monospace characters fit on the screen */
+    font-size: max(1rem,
+            2.2vmin);
+    /* Scale the font-size relative to the minimum screen dimension */
+
+    background: var(--bg);
+    background-image: radial-gradient(ellipse,
+            var(--bg) 0%,
+            var(--off) 90%);
+    animation: on 2s linear;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.termianl::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
 }
 
 
