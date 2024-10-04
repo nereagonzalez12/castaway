@@ -10,7 +10,7 @@ function render_player(string $template)
     require "classes/$template.php";
 }
 
-function render_template(string $template)
+function render_template(string $template, array $data = [])
 {
     require "templates/$template.php";
 }

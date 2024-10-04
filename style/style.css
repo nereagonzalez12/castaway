@@ -2,9 +2,15 @@
  * Credits for the terminal effects:
  * Scanlines/flicker: 	http://aleclownes.com/2017/02/01/crt-display.html
  */
-@import url("https://fonts.googleapis.com/css?family=VT323&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@font-face {
+    font-family: 'Crang';
+    src: url('../assets/fonts/Crang.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('../assets/fonts/PressStart2P.ttf') format('truetype');
+}
 
 /*********** VARIABLES *************/
 :root {
@@ -57,7 +63,6 @@ a {
 }
 
 /*********** PARTS OF THE SCREEN *************/
-
 .terminal::before {
     content: " ";
     display: block;
@@ -73,7 +78,7 @@ a {
 }
 
 .terminal {
-    font-family: "VT323", monospace;
+    font-family: "PressStart2P", monospace;
     position: relative;
     height: 100%;
     padding: 2rem;
@@ -83,7 +88,6 @@ a {
     text-transform: uppercase;
     animation: textShadow 4s infinite;
     color: var(--color);
-    text-shadow: 0 0 5px #c8c8c8;
     /* This makes 80 monospace characters fit on the screen */
     font-size: max(1rem,
             2.2vmin);
@@ -128,4 +132,40 @@ a {
     bottom: 100%;
     pointer-events: none;
     animation: scanline 10s linear infinite;
+}
+
+/*********** TITLE *************/
+.title {
+    font-family: "Crang";
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1%;
+
+    font-size: max(2.5rem,
+            2.2vmin);
+    padding: 1%;
+}
+
+.title img {
+    width: 10%;
+    margin-bottom: 1%;
+}
+
+.title h1 {
+    margin: 0;
+}
+
+@media only screen and (max-width: 800px) {
+    .title {
+        font-size: max(2rem,
+                2.2vmin);
+    }
+
+    .title img {
+        width: 150px;
+        margin-bottom: 5%;
+    }
+
 }

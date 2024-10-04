@@ -10,5 +10,5 @@
         type="text/css"
         href="./style/style.css" />
     <link rel="icon" type="image/x-icon" href="./assets/logo.png">
-    <title>Castaway</title>
+    <title><?= TITLE ?></title>
 </head>
