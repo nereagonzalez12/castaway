@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+/*********** VARIABLES *************/
+:root {
+    --green-color: #5bf870;
+    --green-bg: #05321e;
+    --red-color: #c0100a;
+    --red-bg: #1b0302;
+    --blue-color: #a5a5ff;
+    --blue-bg: #4242e7;
+    --off: #050505;
+    --dark: #111;
+}
+
+/*********** THEMES  *************/
+.theme-red {
+    --color: var(--red-color);
+    --bg: var(--red-bg);
+}
+
+.theme-green {
+    --color: var(--green-color);
+    --bg: var(--green-bg);
+}
+
+.theme-blue {
+    --color: var(--blue-color);
+    --bg: var(--blue-bg);
+}
+
+/*********** GENERIC STUFF *************/
+html {
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background: var(--bg);
+    margin: 0;
+    overflow: hidden;
+    font-family: "VT323", monospace;
+    font-size: max(3rem, 1.6vmin);
+}
+
+a {
+    outline: none;
+}
+
+/*********** PARTS OF THE SCREEN *************/
+
+.terminal {
+    position: relative;
+    height: 100%;
+    padding: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-break: break-word;
+    text-transform: uppercase;
+    animation: textShadow 4s infinite;
+}
+
+.terminal {
+    color: var(--color);
+    text-shadow: 0 0 5px #c8c8c8;
+}
+
+
+/* Scanline moving top to bottom over the screen */
+.scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 8;
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(255, 255, 255, 0.2) 10%,
+            rgba(0, 0, 0, 0.1) 100%);
+    opacity: 0.1;
+    position: absolute;
+    bottom: 100%;
+    pointer-events: none;
+    animation: scanline 10s linear infinite;
+}
