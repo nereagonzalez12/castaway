@@ -225,3 +225,51 @@
         bottom: -20%;
     }
 }
+
+/* Flash the typed letter, fade opaque to transparent */
+@keyframes type {
+    from {
+        background-color: var(--color);
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes cursor {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        left: 0;
+    }
+
+    50% {
+        left: calc(3.5vw - 4vw);
+    }
+}

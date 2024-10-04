@@ -22,7 +22,13 @@
     --blue-bg: #4242e7;
     --off: #050505;
     --dark: #111;
+    --autotype-steps: 30;
 }
+
+/*********** INPUT FORM *************/
+
+
+
 
 /*********** THEMES  *************/
 .theme-red {
@@ -61,6 +67,26 @@ body {
 a {
     outline: none;
 }
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    border: none;
+    background-color: transparent;
+    color: var(--color);
+    font-family: "PressStart2P", monospace;
+    height: 50%;
+    width: 55%;
+    background-color: var(--dark);
+    margin-left: 3%;
+    font-size: 1em;
+    padding: 3%;
+}
+
 
 /*********** PARTS OF THE SCREEN *************/
 .terminal::before {
@@ -136,20 +162,17 @@ a {
 
 /*********** TITLE *************/
 .title {
-    font-family: "Crang";
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     margin-top: 1%;
-
-    font-size: max(2.5rem,
-            2.2vmin);
+    font-size: 1.5em;
     padding: 1%;
 }
 
 .title img {
-    width: 10%;
+    width: 20vh;
     margin-bottom: 1%;
 }
 
@@ -157,15 +180,25 @@ a {
     margin: 0;
 }
 
-@media only screen and (max-width: 800px) {
-    .title {
-        font-size: max(2rem,
-                2.2vmin);
-    }
+/*********** NAME FORM *************/
+.name-form {
+    margin-top: 5%;
+    display: grid;
+    place-items: center;
+    height: 20%;
+}
 
-    .title img {
-        width: 150px;
-        margin-bottom: 5%;
-    }
+.autotype-text {
+    text-align: center;
+    width: 50vw;
+    animation: typing 3s steps(var(--autotype-steps));
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.arrow {
+    width: auto;
+    position: relative;
+    animation: bounce 1s ease-in-out infinite;
 
 }
