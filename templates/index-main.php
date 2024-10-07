@@ -11,7 +11,7 @@ $nameRequest = 'Introduce tu nombre para empezar:';
         </div>
         <div class="name-form">
             <div class="autotype-text"><?= $nameRequest ?></div>
-            <form action="action.php" method="post">
+            <form action="game.php" method="post">
                 <label for="name" class="arrow">></label>
                 <input name="name" id="name" type="text" autocomplete="off" maxlength="10">
             </form>

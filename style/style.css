@@ -167,7 +167,6 @@ input {
 }
 
 
-
 /*********** TITLE *************/
 .title {
     display: flex;
@@ -209,4 +208,57 @@ input {
     position: relative;
     animation: bounce 1s ease-in-out infinite;
 
+}
+
+
+/*********** DAYS *************/
+.day-container {
+    height: 30%;
+    display: flex;
+    align-items: center;
+    padding: 1%;
+}
+
+.day-container img {
+    width: 3em;
+}
+
+/*********** STATS *************/
+.stats-container {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 30%;
+}
+
+.player-stats-list {
+    list-style: none;
+    border-color: var(--color);
+    border-bottom: 3px solid var(--color);
+    border-right: 3px solid var(--color);
+    display: flex;
+    padding: 1%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-stats-list li {
+    margin: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    height: 25%;
+
+}
+
+.stats-img {
+    width: 1.3em;
+    margin-right: 1em;
+}
+
+#water-img {
+    width: 1.1em;
 }

@@ -273,3 +273,9 @@
         left: calc(3.5vw - 4vw);
     }
 }
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: blur(0)) {
+    .terminal {
+        filter: none;
+    }
+}

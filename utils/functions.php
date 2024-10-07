@@ -12,6 +12,7 @@ function render_player(string $template)
 
 function render_template(string $template, array $data = [])
 {
+    extract($data);
     require "templates/$template.php";
 }
 

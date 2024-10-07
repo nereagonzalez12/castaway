@@ -9,11 +9,12 @@ class Player
         private int $food,
         private int $water,
         private int $energy,
+        private int $day,
     ) {}
 
     public static function create_player(string $name): Player
     {
-        return new self($name, 3, 3, 5);
+        return new self($name, 3, 3, 5, 1);
     }
 
 
@@ -141,7 +142,7 @@ class Player
                 $this->energy -= 2;
                 break;
         }
-
+        $this->day++;
         return [$this, $response];
     }
 
@@ -158,7 +159,6 @@ class Player
                 $this->food--;
                 $this->water--;
                 $this->energy += 3;
-
                 break;
             case 2:
                 $response = 'Unas hormigas han estado toda la noche intentando usar tu ombligo como nueva madriguera, no 
@@ -167,7 +167,6 @@ class Player
                 $this->food--;
                 $this->water--;
                 $this->energy++;
-
                 break;
             case 3:
                 $response = 'Tu estómago no ha reaccionado muy bien al agua de mar que intentaste beber... te has cagado 
@@ -177,7 +176,6 @@ class Player
                 $this->food--;
                 $this->water--;
                 $this->energy += 2;
-
                 break;
             case 4:
                 $response = 'Te has pasado toda la noche llorando... por la impotencia de saber que te perderás la salida
@@ -186,7 +184,6 @@ class Player
                 $this->food--;
                 $this->water -= 2;
                 $this->energy++;
-
                 break;
             case 5:
                 $response = 'Has sido acechado por jabalíes durante la noche, pero te han visto tan sucio y 
@@ -196,7 +193,6 @@ class Player
                 $this->food--;
                 $this->water--;
                 $this->energy += 2;
-
                 break;
             case 6:
                 $response = 'No ha pasado nada especial... no siempre vas a tener mala suerte, espabila -- -1 agua, 
@@ -205,7 +201,6 @@ class Player
                 $this->food--;
                 $this->water--;
                 $this->energy += 2;
-
                 break;
             case 7:
                 $response = 'Has encontrado un escondite perfecto para poder descarsar sin que te entre la luz del día
@@ -217,7 +212,6 @@ class Player
                 $this->food--;
                 $this->water--;
                 $this->energy += 2;
-
                 break;
             case 8:
                 $response = 'Te has pasado la noche soñando con el menú McAitana que tanto te gustaba, pero al despertar, la 
@@ -235,7 +229,6 @@ class Player
                 $this->food--;
                 $this->water--;
                 $this->energy += 0;
-
                 break;
             case 10:
                 $response = 'Encuentras un pequeño claro en el bosque donde decides descansar. La tranquilidad te 
@@ -245,10 +238,9 @@ class Player
                 $this->water--;
                 $this->energy += 3;
                 $this->food--;
-
                 break;
         }
-
+        $this->day++;
         return [$this, $response];
     }
 
@@ -463,6 +455,7 @@ class Player
 
                 break;
         }
+        $this->day++;
 
         return [$this, $response];
     }
@@ -572,6 +565,9 @@ class Player
                 $escape = true;
 
                 break;
+        }
+        if (!$escape) {
+            $this->day++;
         }
         return [$this, $response, $escape];
     }
