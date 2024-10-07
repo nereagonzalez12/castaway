@@ -2,14 +2,15 @@
  * Credits for the terminal effects:
  * Scanlines/flicker: 	http://aleclownes.com/2017/02/01/crt-display.html
  */
-@font-face {
-    font-family: 'Crang';
-    src: url('../assets/fonts/Crang.ttf') format('truetype');
-}
 
 @font-face {
     font-family: 'PressStart2P';
     src: url('../assets/fonts/PressStart2P.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RetroGaming';
+    src: url('../assets/fonts/Retro\ Gaming.ttf') format('truetype');
 }
 
 /*********** VARIABLES *************/
@@ -198,7 +199,6 @@ input {
 .autotype-text {
     text-align: center;
     width: 50vw;
-    animation: typing 3s steps(var(--autotype-steps));
     white-space: nowrap;
     overflow: hidden;
 }
@@ -261,4 +261,27 @@ input {
 
 #water-img {
     width: 1.1em;
+}
+
+
+/*********** GAME LORE *************/
+.game-lore {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game-text {
+    text-transform: none;
+    width: 50%;
+    font-size: medium;
+    /* text-align: justify; */
+    line-height: 1.4em;
+    margin-bottom: 5%;
 }

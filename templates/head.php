@@ -11,6 +11,7 @@
         href="./style/style.css" />
     <link rel="icon" type="image/x-icon" href="./assets/logo.png">
     <title><?= TITLE ?></title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
 
 </head>

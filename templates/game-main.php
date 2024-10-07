@@ -12,6 +12,10 @@
                 <li><img class="stats-img" src='./assets/img/green-energy.png'><?= $energy ?></li>
             </ul>
         </div>
+        <div class="game-lore">
+            <div class="game-text"><?= $response; ?></div>
+            <div class="game-buttons"></div>
+        </div>
         <div class="theme-selector">
             <div style="color: var(--green-color);">■</div>
             <div style="color: var(--orange-color);">■</div>
