@@ -32,6 +32,7 @@
 </body>
 
 <script>
+    // Type text animation with Typed.js
     document.addEventListener("DOMContentLoaded", function() {
         var typed = new Typed('.game-text', {
             strings: [<?= json_encode($response); ?>],
@@ -39,5 +40,20 @@
             showCursor: false,
             loop: false,
         });
+    });
+
+    // JQuery inputs with ajax
+    $(document).ready(function() {
+        $('.button').click(function() {
+            var clickBtnValue = $(this).val();
+            var ajaxurl = 'utils/ajax.php',
+                data = {
+                    'action': clickBtnValue
+                };
+            $.post(ajaxurl, data, function(response) {
+                console.log(response);
+            });
+        });
+
     });
 </script>

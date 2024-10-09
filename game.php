@@ -4,7 +4,7 @@ require_once 'utils/functions.php';
 require_once 'utils/const.php';
 
 
-// Create player 
+// Create player  
 $player = Player::create_player($_REQUEST['name']);
 $playerData = $player->get_data();
 

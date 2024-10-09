@@ -316,7 +316,8 @@ input {
 }
 
 .button:hover {
-    border: none;
+    border-bottom: 3px solid transparent;
+    border-right: 3px solid transparent;
 }
 
 
