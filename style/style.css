@@ -281,7 +281,70 @@ input {
     text-transform: none;
     width: 50%;
     font-size: medium;
-    /* text-align: justify; */
+    text-align: justify;
     line-height: 1.4em;
     margin-bottom: 5%;
+}
+
+/*********** GAME BUTTONS *************/
+.game-buttons {
+    width: 50%;
+}
+
+.game-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.button {
+    cursor: pointer;
+    background-color: transparent;
+    border-bottom: 3px solid var(--color);
+    border-right: 3px solid var(--color);
+    border-left: none;
+    border-top: none;
+    padding: 1%;
+    font-family: "PressStart2P", monospace;
+    color: var(--color);
+    flex-grow: 0.05;
+    margin-bottom: 5%;
+    margin-left: 0;
+    font-size: 0.7em;
+    width: auto;
+}
+
+.button:hover {
+    border: none;
+}
+
+
+
+
+
+
+/*********** MEDIA QUERYS *************/
+@media only screen and (max-width: 768px) {
+
+    .game-text {
+        font-size: x-small;
+        width: 90%;
+    }
+
+    .game-buttons {
+        width: 90%;
+        margin-top: 20%;
+    }
+
+    .button {
+        padding: 2%;
+        font-size: x-small;
+        width: 45%;
+        border-bottom: 2px solid var(--color);
+        border-right: 2px solid var(--color);
+    }
+
+
+
 }

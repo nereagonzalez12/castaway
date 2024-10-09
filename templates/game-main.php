@@ -13,8 +13,15 @@
             </ul>
         </div>
         <div class="game-lore">
-            <div class="game-text"><?= $response; ?></div>
-            <div class="game-buttons"></div>
+            <div class="game-text"></div>
+            <div class="game-buttons">
+                <div class="game-buttons-container">
+                    <input type="submit" class="button" name="search-food" value="Buscar comida"></input>
+                    <input type="submit" class="button" name="explore" value="Explorar"></input>
+                    <input type="submit" class="button" name="rest" value="Descansar"></input>
+                    <input type="submit" class="button" name="escape" value="Intentar escapar"></input>
+                </div>
+            </div>
         </div>
         <div class="theme-selector">
             <div style="color: var(--green-color);">■</div>
@@ -23,3 +30,14 @@
         </div>
     </div>
 </body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var typed = new Typed('.game-text', {
+            strings: [<?= json_encode($response); ?>],
+            typeSpeed: 50,
+            showCursor: false,
+            loop: false,
+        });
+    });
+</script>
